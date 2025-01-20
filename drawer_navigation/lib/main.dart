@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:drawer_navigation/pages/favorite_page.dart';
+import 'package:drawer_navigation/pages/workflow_page.dart';
+import 'package:drawer_navigation/pages/update_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -97,12 +99,24 @@ Widget buildMenuItems(BuildContext context) {
         ListTile(
           leading: const Icon(Icons.workspaces_outlined, color: Colors.white),
           title: const Text('Workflow', style: TextStyle(color: Colors.white),),
-          onTap: () {}
+          onTap: () {
+            Navigator.pop(context);
+            Navigator.of(context).pushReplacement(
+            MaterialPageRoute(
+              builder: (context) => const WorkflowPage(),
+            ));
+          }
         ),
         ListTile(
           leading: const Icon(Icons.update_outlined, color: Colors.white),
           title: const Text('Updates', style: TextStyle(color: Colors.white),),
-          onTap: () {}
+          onTap: () {
+            Navigator.pop(context);
+            Navigator.of(context).pushReplacement(
+            MaterialPageRoute(
+              builder: (context) => const UpdatePage(),
+            ));
+          }
         ),
       ],
     ),
