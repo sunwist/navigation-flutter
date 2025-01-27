@@ -1,3 +1,5 @@
+import 'package:drawer_navigation/pages/notification_page.dart';
+import 'package:drawer_navigation/pages/plugin_page.dart';
 import 'package:drawer_navigation/pages/user_page.dart';
 import 'package:flutter/material.dart';
 import 'package:drawer_navigation/pages/favorite_page.dart';
@@ -49,7 +51,6 @@ class NavigatorDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: Color(0xFFfbeaff),
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -137,6 +138,25 @@ Widget buildMenuItems(BuildContext context) {
               Navigator.pop(context);
               Navigator.of(context).pushReplacement(MaterialPageRoute(
                 builder: (context) => const UpdatePage(),
+              ));
+            }),
+        const Divider(color: Colors.black),
+        ListTile(
+            leading: const Icon(Icons.account_tree_outlined),
+            title: const Text('Plugins'),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.of(context).pushReplacement(MaterialPageRoute(
+                builder: (context) => const PluginPage(),
+              ));
+            }),
+        ListTile(
+            leading: const Icon(Icons.notifications_outlined),
+            title: const Text('Notifications'),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.of(context).pushReplacement(MaterialPageRoute(
+                builder: (context) => const NotificationPage(),
               ));
             }),
       ],
