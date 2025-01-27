@@ -1,10 +1,12 @@
 import 'package:drawer_navigation/model/user.dart';
 import 'package:drawer_navigation/utils/user_preferences.dart';
+import 'package:drawer_navigation/widgets/numbers_widget.dart';
 import 'package:drawer_navigation/widgets/profile_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:drawer_navigation/main.dart';
+import 'package:drawer_navigation/widgets/button_widget.dart';
 
-class UserPage extends StatefulWidget{
+class UserPage extends StatefulWidget {
   const UserPage({super.key});
 
   @override
@@ -19,9 +21,9 @@ class _UserPageState extends State<UserPage> {
     return Scaffold(
       appBar: AppBar(
         leading: BackButton(
-          onPressed: (){
-            Navigator.pushReplacement(context, 
-            MaterialPageRoute(builder: (context) => const HomePage()));
+          onPressed: () {
+            Navigator.pushReplacement(context,
+                MaterialPageRoute(builder: (context) => const HomePage()));
           },
         ),
         backgroundColor: Colors.transparent,
@@ -40,12 +42,16 @@ class _UserPageState extends State<UserPage> {
           ),
           const SizedBox(height: 24),
           buildName(user),
+          const SizedBox(height: 24),
+          Center(
+            child: buildUpgradeButton()),
+            NumbersWidget(),
         ],
       ),
     );
   }
 
-  Widget buildName(User user){
+  Widget buildName(User user) {
     return Column(
       children: [
         Text(
@@ -58,6 +64,13 @@ class _UserPageState extends State<UserPage> {
           style: TextStyle(color: Colors.grey),
         )
       ],
+    );
+  }
+
+  Widget buildUpgradeButton() {
+    return ButtonWidget(
+      text: 'Upgrade to PRO',
+      onClicked: () {},
     );
   }
 }
