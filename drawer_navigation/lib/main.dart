@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:drawer_navigation/pages/favorite_page.dart';
 import 'package:drawer_navigation/pages/workflow_page.dart';
 import 'package:drawer_navigation/pages/update_page.dart';
+import 'package:drawer_navigation/utils/user_preferences.dart';
 
 void main() {
   runApp(const MyApp());
@@ -65,6 +66,8 @@ class NavigatorDrawer extends StatelessWidget {
 }
 
 Widget buildHeader(BuildContext context) {
+  final user = UserPreferences.myUser;
+
   return Material(
     color: Color(0XFF8760c5),
     child: InkWell(
@@ -80,17 +83,17 @@ Widget buildHeader(BuildContext context) {
           bottom: 24,
         ),
         child: Column(
-          children: const [
+          children: [
             CircleAvatar(
                 radius: 60,
-                backgroundImage: NetworkImage(
-                    'https://images.unsplash.com/photo-1506863530036-1efeddceb993?q=80&w=1944&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')),
-            SizedBox(height: 12),
+                backgroundImage: NetworkImage(user.imagePath),
+            ),
+            const SizedBox(height: 12),
             Text(
-              'Sarah Abs',
+              user.name,
               style: TextStyle(fontSize: 18, color: Colors.white),
             ),
-            Text('sarah@abs.com', style: TextStyle(color: Colors.white)),
+            Text(user.email, style: TextStyle(color: Colors.white)),
           ],
         ),
       ),
