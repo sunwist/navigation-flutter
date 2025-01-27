@@ -43,9 +43,10 @@ class _UserPageState extends State<UserPage> {
           const SizedBox(height: 24),
           buildName(user),
           const SizedBox(height: 24),
-          Center(
-            child: buildUpgradeButton()),
-            NumbersWidget(),
+          Center(child: buildUpgradeButton()),
+          const SizedBox(height: 24),
+          NumbersWidget(),
+          const SizedBox(height: 24),
         ],
       ),
     );
