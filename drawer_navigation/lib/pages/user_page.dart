@@ -1,3 +1,4 @@
+import 'package:drawer_navigation/model/user.dart';
 import 'package:drawer_navigation/utils/user_preferences.dart';
 import 'package:drawer_navigation/widgets/profile_widget.dart';
 import 'package:flutter/material.dart';
@@ -37,8 +38,26 @@ class _UserPageState extends State<UserPage> {
             imagePath: user.imagePath,
             onClicked: () async {},
           ),
+          const SizedBox(height: 24),
+          buildName(user),
         ],
       ),
+    );
+  }
+
+  Widget buildName(User user){
+    return Column(
+      children: [
+        Text(
+          user.name,
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+        ),
+        const SizedBox(height: 4),
+        Text(
+          user.email,
+          style: TextStyle(color: Colors.grey),
+        )
+      ],
     );
   }
 }
