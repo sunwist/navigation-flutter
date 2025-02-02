@@ -1,9 +1,15 @@
-# Navigation Drawer
+# 🎯 Navigation Drawer
 
 O Drawer é um widget do Flutter que funciona como um painel deslizante que aparece na lateral da tela quando o usuário clica em um ícone de menu personalizado. Ele permite que os usuários naveguem entre diferentes telas do aplicativo.
 
-![HomePage](drawer_navigation/lib/img/screenshot.png)
-![UserPage](drawer_navigation/lib/img/screenshot2.png)
+<br>
+<div align="center">
+
+| HomePage | UserPage |
+|-----------|----------|
+| <img src="lib/img/screenshot2.png" alt="HomePage" width="250"/> | <img src="lib/img/screenshot.png" alt="UserPage" width="250"/> |
+
+</div>
 
 
 ## 📝 Descrição
